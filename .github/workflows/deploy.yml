@@ -10,10 +10,14 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Get and cache dependencies
+        id: get_and_cache
         uses: ./.github/actions/cached-deps
         with:
           caching: 'false' # disables caching for `lint` job
-      #      - name: Cache dependencies
+      - name: Output information
+        run: echo "Cache used? ${{ steps.get_and_cache.outputs.used-cache }}"
+
+#      - name: Cache dependencies
 #        id: cache
 #        uses: actions/cache@v3
 #        with:
