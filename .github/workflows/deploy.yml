@@ -74,3 +74,12 @@ jobs:
         run: ls
       - name: Deploy site
         run: echo "Deploying..."
+  information:
+    runs-on: ubuntu-latest
+    steps:
+      # Since we're storing reusable action locally,
+      # it requires doing a checkout before running it
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Run custom action
+        uses: ./.github/actions/deploy-s3-javascript
