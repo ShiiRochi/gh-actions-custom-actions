@@ -11,7 +11,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Get and cache dependencies
         uses: ./.github/actions/cached-deps
-#      - name: Cache dependencies
+        with:
+          caching: 'false' # disables caching for `lint` job
+      #      - name: Cache dependencies
 #        id: cache
 #        uses: actions/cache@v3
 #        with:
