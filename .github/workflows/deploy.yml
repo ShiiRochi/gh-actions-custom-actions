@@ -72,7 +72,7 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
-      - name: Deploy site
+      - name: Deploy site with JavaScript action
         uses: ./.github/actions/deploy-s3-javascript
         id: deploy
         env:
